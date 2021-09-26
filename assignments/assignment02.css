@@ -35,7 +35,7 @@ span {
 }
 
 .c {
- display: inline; 
+ display: inline-block; 
 }
 
 img[alt="cat icon"]{
