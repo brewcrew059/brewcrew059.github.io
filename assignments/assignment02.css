@@ -15,6 +15,13 @@ div {
   margin-bottom: 50px;
 }
 
+span {
+  width: 100px;
+  height: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 /* external css is imported into html using the <link> tag in the <head> section, as shown below.
 
   <head>
