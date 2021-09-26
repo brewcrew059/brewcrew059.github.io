@@ -53,7 +53,7 @@ img[alt="dog icon"] {
 img[alt="bird icon"] {
   position: relative;
   left: 250px;
-  top: 50px;
+  top: 5px;
   z-index: 1;
 }
 
