@@ -38,6 +38,12 @@ span {
  overflow-wrap: break-word; 
 }
 
+img[alt="cat icon"]{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
 /* external css is imported into html using the <link> tag in the <head> section, as shown below.
 
   <head>
