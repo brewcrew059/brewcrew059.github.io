@@ -26,6 +26,14 @@ span {
   background-color: yellow;
 }
 
+.a {
+  overflow-wrap: normal;
+}
+
+.b {
+  display: block;
+}
+
 /* external css is imported into html using the <link> tag in the <head> section, as shown below.
 
   <head>
