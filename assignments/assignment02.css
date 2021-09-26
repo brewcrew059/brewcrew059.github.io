@@ -54,6 +54,7 @@ img[alt="bird icon"] {
   position: relative;
   left: 250px;
   top: 50px;
+  z-index: 1;
 }
 
 nav {
