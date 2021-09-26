@@ -62,6 +62,8 @@ nav {
   top: 0;
   background-color: lime;
   opacity: 0.9;
+  bar-padding: 5px;
+  font-size: 20px;
 }
 
 /* external css is imported into html using the <link> tag in the <head> section, as shown below.
