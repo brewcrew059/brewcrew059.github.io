@@ -56,6 +56,13 @@ img[alt="bird icon"] {
   top: 50px;
 }
 
+nav {
+  position: sticky;
+  top: 0;
+  background-color: green;
+  opacity: 0.9;
+}
+
 /* external css is imported into html using the <link> tag in the <head> section, as shown below.
 
   <head>
