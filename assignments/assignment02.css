@@ -35,7 +35,7 @@ span {
 }
 
 .c {
- overflow-wrap: break-word; 
+ display: inline; 
 }
 
 img[alt="cat icon"]{
