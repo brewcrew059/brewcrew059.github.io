@@ -20,6 +20,9 @@ span {
   height: 50px;
   padding-top: 5px;
   padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 5px solid blue;
 }
 
 /* external css is imported into html using the <link> tag in the <head> section, as shown below.
