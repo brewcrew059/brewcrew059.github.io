@@ -34,6 +34,10 @@ span {
   display: block;
 }
 
+.c {
+ overflow-wrap: break-word; 
+}
+
 /* external css is imported into html using the <link> tag in the <head> section, as shown below.
 
   <head>
