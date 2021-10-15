@@ -1,4 +1,3 @@
-
 <html>
    <body>
       <style>
@@ -154,6 +153,7 @@
             elem[i] = document.getElementById(i.toString());
             elem[i].children[4].children[0].onclick = function(){add1(elem[i]);};
             elem[i].children[4].children[1].onclick = function(){sub1(elem[i]);};
+            elem[i].children[3].innerHTML = 0;
            }
          
          function add1 (elem) {
@@ -164,7 +164,9 @@
                currentScore = Number.parseInt(currentScore);
                elem.children[2].innerHTML = currentScore + 1;
                }
-               }
+             updateOver(elem);
+           }
+               
          function sub1 (elem) {
          if(elem.children[2].innerHTML == "1"){
             	elem.children[2].innerHTML = "-";
@@ -176,6 +178,22 @@
             	let currentScore = elem.children[2].innerHTML;
                 currentScore = Number.parseInt(currentScore);
                 elem.children[2].innerHTML = currentScore - 1;
+            }
+         	
+            updateOver(elem);
+         }
+         
+         function updateOver (elem) {
+         	let score = elem.children[2].innerHTML;
+            score = Number.parseInt(score);
+            let par = elem.children[1].innerHTML;
+            par = Number.parseInt(par);
+            let over = score - par;
+            if (over <= 0){
+            	elem.children[3].innerHTML = 0;
+            }
+            else {
+            	elem.children[3].innerHTML = over;
             }
          }
          
