@@ -151,12 +151,14 @@
          
          for(let i=1; i<=18; i++) {
             elem[i] = document.getElementById(i.toString());
-            elem[i].children[4].children[0].onclick = function(){add1(elem[i]);};
-            elem[i].children[4].children[1].onclick = function(){sub1(elem[i]);};
-            elem[i].children[3].innerHTML = 0;
+            elem[i].children[4].children[0].onclick = function(){add1(elem[i], elem);};
+            elem[i].children[4].children[1].onclick = function(){sub1(elem[i], elem);};
            }
+           
+         elem[19] = document.getElementById("totals");
+         updateTotals(elem);
          
-         function add1 (elem) {
+         function add1 (elem, full) {
             if(elem.children[2].innerHTML == "-") 
                elem.children[2].innerHTML = "1";
             else {
@@ -165,9 +167,10 @@
                elem.children[2].innerHTML = currentScore + 1;
                }
              updateOver(elem);
+             updateTotals(full);
            }
                
-         function sub1 (elem) {
+         function sub1 (elem, full) {
          if(elem.children[2].innerHTML == "1"){
             	elem.children[2].innerHTML = "-";
             }
@@ -181,6 +184,7 @@
             }
          	
             updateOver(elem);
+            updateTotals(full);
          }
          
          function updateOver (elem) {
@@ -195,6 +199,40 @@
             else {
             	elem.children[3].innerHTML = over;
             }
+         }
+         
+         function updateTotals (elem) {
+         	let totalPar = 0;
+            let totalScore = 0;
+            let totalOver = 0;
+            let curPar = 0;
+            let curScore = 0;
+            let curOver = 0;
+            
+            for(i=1;i<=18;i++){
+            	curPar = elem[i].children[1].innerHTML;
+            	totalPar += Number.parseInt(curPar);
+                
+                if(elem[i].children[2].innerHTML == "-"){
+                	curScore = 0;
+                }
+                else{
+                	curScore = elem[i].children[2].innerHTML;
+                    totalScore += Number.parseInt(curScore);
+                }
+                
+                if(elem[i].children[3].innerHTML == "-"){
+                	curOver = 0;
+                }
+                else{
+                	curOver = elem[i].children[3].innerHTML;
+                    totalOver += Number.parseInt(curOver);
+                }
+            }
+            
+         	elem[19].children[1].innerHTML = totalPar;
+            elem[19].children[2].innerHTML = totalScore;
+            elem[19].children[3].innerHTML = totalOver;
          }
          
       </script>
