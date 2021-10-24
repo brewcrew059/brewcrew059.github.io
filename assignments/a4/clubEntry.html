@@ -26,7 +26,7 @@
 			    class='form-control cmn_moreHeight' 
 				placeholder='Driver' required /><br>
 			<button class='btn btn-success cmn_fullHeight' 
-			    onclick='addClub();'>&nbsp;&nbsp;&#x2714;&nbsp;&nbsp;</button> 
+			    onclick='addClub(clubName);'>&nbsp;&nbsp;&#x2714;&nbsp;&nbsp;</button> 
 			<button class='btn btn-danger cmn_fullHeight'  
 			    onclick='cancelClub();'>&nbsp;&nbsp;X&nbsp;&nbsp;</button>
 			<br>
@@ -50,8 +50,8 @@
 	let newClubName ;
 	let newClubDistances;
 	
-	function addClub() {
-        // your code here
+	function addClub(clubName) {
+        	localStorage.getItem('clubs').push(clubName);
 	}
 	
 	// navigate to club distance LIST screen
