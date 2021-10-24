@@ -11,3 +11,11 @@
 .cmn_moreHeight { height: 6vh; font-size: 4vh; }
 .cmn_noPadding  { padding: 0px; }
 .cmn_tapEntry   { width: 50px; }
+
+div	{
+         padding : 1%;
+         color: white;
+         background-color: 009900;
+         width: 30%;
+         border: solid black;
+         }
