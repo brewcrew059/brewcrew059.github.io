@@ -52,11 +52,15 @@
 	
 	function addClub(clubName) {
 		clubs.push([1699, "", clubName,   0, 0, 0, 0, 60.0,   3,   3]);
-		let tblbody = document.getElementById('clubTable').children[0]; 
+		let tblbody = document.getElementById('clubTable').children[0];
+		console.log(tblbody);
 		let row = tblbody.insertRow(7);
+		
 		let cell6 = row.insertCell(6); // clubName
+		
 		cell6.className = "cmn_fullHeight";
 		cell6.innerHTML = clubs[14][2];
+		console.log(cell6);
 		
 		window.location.href = "clubDistanceList.html"; 
 	}
