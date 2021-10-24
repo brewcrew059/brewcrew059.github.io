@@ -3,6 +3,7 @@
                   color: white;
 				  background-color: black;}
 .cmn_alignRight { text-align: right; }
+.cmn_alignLeft { text-align: left; }
 .cmn_hidden     { display:none; }
 .cmn_green_bkgd { background-color: #CAFF33; }
 .cmn_green      { color: green; }
