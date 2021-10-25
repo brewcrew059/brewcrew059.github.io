@@ -55,6 +55,10 @@
 		
 		clubs.push([1699, "new", newClubName,   0, 0, 0, 0, 60.0,   3,   3]);
 		
+		str = JSON.stringify(clubs);
+		
+		localStorage.setItem("clubs", str);
+		
 		appendTableRows();
 		
 		window.location.href = "clubDistanceList.html"; 
