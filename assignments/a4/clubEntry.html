@@ -26,7 +26,7 @@
 			    class='form-control cmn_moreHeight' 
 				placeholder='Driver' required /><br>
 			<button class='btn btn-success cmn_fullHeight' 
-			    onclick='addClub(clubName);'>&nbsp;&nbsp;&#x2714;&nbsp;&nbsp;</button> 
+			    onclick='addClub();'>&nbsp;&nbsp;&#x2714;&nbsp;&nbsp;</button> 
 			<button class='btn btn-danger cmn_fullHeight'  
 			    onclick='cancelClub();'>&nbsp;&nbsp;X&nbsp;&nbsp;</button>
 			<br>
@@ -50,22 +50,11 @@
 	let newClubName ;
 	let newClubDistances;
 	
-	function addClub(clubName) {
-		clubs.push([1699, "", clubName,   0, 0, 0, 0, 60.0,   3,   3]);
-		let str = JSON.stringify(clubs);
-		localStorage.setItem("clubs", str);
-		console.log(clubs);
+	function addClub() {
+		newClubName = document.getElementById('clubName').innerHTML;
+		console.log(newClubName);
 		
 		
-		let tblbody = document.getElementById('clubTable').children[0];
-		console.log(tblbody);
-		let row = tblbody.insertRow(7);
-		
-		let cell6 = row.insertCell(6); // clubName
-		
-		cell6.className = "cmn_fullHeight";
-		cell6.innerHTML = clubs[14][2];
-		console.log(cell6);
 		
 		window.location.href = "clubDistanceList.html"; 
 	}
