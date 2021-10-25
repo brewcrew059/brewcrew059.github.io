@@ -53,7 +53,9 @@
 	function addClub() {
 		newClubName = document.getElementById('clubName').innerHTML;
 		
+		clubs.push([1699, "new", newClubName,   0, 0, 0, 0, 60.0,   3,   3]);
 		
+		appendTableRows();
 		
 		window.location.href = "clubDistanceList.html"; 
 	}
