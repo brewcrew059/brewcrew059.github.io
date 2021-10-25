@@ -210,5 +210,5 @@ function hideWarning(){
 }
 
 function displayWarning(){
-	document.getElementById('a1').style.display = 'block';
+	document.getElementsByClassName('alert1').style.display = 'block';
 }
