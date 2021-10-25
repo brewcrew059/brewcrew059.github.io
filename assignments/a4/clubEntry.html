@@ -59,7 +59,11 @@
 		
 		localStorage.setItem("clubs", str);
 		
-		appendTableRows();
+		let tblbody = document.getElementById('clubTable').children[0]; 
+		let row = tblbody.insertRow(14);
+		let cell6 = row.insertCell(6);
+		cell6.className = "cmn_fullHeight";
+		cell6.innerHTML = newClubName;
 		
 		window.location.href = "clubDistanceList.html"; 
 	}
