@@ -204,3 +204,11 @@ function updateStats(shotDistance=0) {
 		window.location.href = "clubDistanceList.html"; 
 	}
 }
+
+function hideWarning(){
+	document.getElementById('a1').style.display = 'none';
+}
+
+function displayWarning(){
+	document.getElementById('a1').style.display = 'block';
+}
