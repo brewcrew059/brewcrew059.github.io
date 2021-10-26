@@ -3,7 +3,12 @@ let person = {
   firstName: "Jane",
   lastName: "Doe",
   age: 45,
-  fullName: function() {return this.firstName  + " " + person.lastName}
+  streetAddress: "2323 Wall St",
+  city: "Midland",
+  state: "Michigan",
+  zipCode: 23453,
+  fullName: function() {return this.firstName  + " " + person.lastName},
+  fullAddress: function() {return this.streetAddress + " " + this.city + ", " + this.state + " " + this.zipCode}
 }
 document.getElementById("1A").innerHTML = person.fullName();
 
