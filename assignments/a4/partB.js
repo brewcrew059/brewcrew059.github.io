@@ -64,8 +64,32 @@ div3b.appendChild(table3b);
 table3b.setAttribute("style", "border:1px solid black;")
 table3b.setAttribute("width", "100%")
 appendTableRow4(table3b,"Item","Price","Qty","Price*Qty");
-var xy = document.getElementById("table03A")[0].innerHTML;
-appendTableRow4(table3b, xy,"Price","Qty","Price*Qty");
+
+let arr = [];
+
+var zzz = document.getElementById("table03A");
+for (i=1; i<zzz.rows.length; i++){
+  var myCells = zzz.rows.item(i).cells;
+  arr.push(myCells);
+}
+
+let arr2 = [];
+
+for (k=0; k<zzz.rows.length-1; k++){
+  arr2.push(parseInt(arr[k][1].innerHTML) * parseInt(arr[k][2].innerHTML));
+  
+}
+
+for (j=0; j<zzz.rows.length-1; j++)
+{
+    appendTableRow4(table3b, arr[j][0].innerHTML, arr[j][1].innerHTML, arr[j][2].innerHTML, arr2[j]);
+}
+
+let sum = 0;
+for (l=0; l<arr2.length; l++){
+  sum+=arr2[l];
+}
+appendTableRow4(table3b,"Total:","","",sum);
 
 
 // 9. Revise a non-object-oriented HTML form. Make it so the field in focus displays *only* its own error (not the errors of all the other fields), however, if the user clicks the "validate" button, then display all errors.
@@ -90,6 +114,14 @@ appendTableRow4(table3b, xy,"Price","Qty","Price*Qty");
         inputs[3] = document.getElementById('uid').value;
         inputs[4] = document.getElementById('password').value;
         inputs[5] = document.getElementById('confirm').value;
+        // Id array
+        var ids = new Array();
+        ids[0] = "first";
+        ids[1] = "last";
+        ids[2] = "email";
+        ids[3] = "uid";
+        ids[4] = "password";
+        ids[5] = "confirm";
         // initialize error array
         var errors = new Array();
         errors[0] = "<span style='color:red'>Please enter your first name!</span>";
@@ -102,9 +134,12 @@ appendTableRow4(table3b, xy,"Price","Qty","Price*Qty");
         for (i in inputs) {
             var errMessage = errors[i];
             var div = divs[i];
-            if (inputs[i] == "")
+            var activeTextArea = document.activeElement;
+          if (ids[i] == activeTextArea.id){
+            document.getElementById(div).style.visibility = "visible";
+            if (inputs[i] == "");
                 document.getElementById(div).innerHTML = errMessage;
-            else if (i == 2) {
+            if (i == 2) {
                 var atpos = inputs[i].indexOf("@");
                 var dotpos = inputs[i].lastIndexOf(".");
                 if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= inputs[i].length)
@@ -122,6 +157,10 @@ appendTableRow4(table3b, xy,"Price","Qty","Price*Qty");
                     document.getElementById(div).innerHTML = "OK!";
             } else
                 document.getElementById(div).innerHTML = "OK!";
+          }
+          else{
+            document.getElementById(div).style.visibility = "hidden";
+          }
         }
     }
 
@@ -133,9 +172,17 @@ appendTableRow4(table3b, xy,"Price","Qty","Price*Qty");
             if (document.getElementById(div).innerHTML == "OK!")
                 count = count + 1;
         }
-        if (count == 6)
+        if (count == 6){
             document.getElementById("errFinal").innerHTML 
               = "All the data you entered is correct!!!";
+        }else{
+          document.getElementById(divs[0]).style.visibility = "visible";
+          document.getElementById(divs[1]).style.visibility = "visible";
+          document.getElementById(divs[2]).style.visibility = "visible";
+          document.getElementById(divs[3]).style.visibility = "visible";
+          document.getElementById(divs[4]).style.visibility = "visible";
+          document.getElementById(divs[5]).style.visibility = "visible";
+        }
     }
 
 
@@ -164,7 +211,6 @@ let formArray = [
 
 // Step 3. loop through the JS object array to populate the form
 
-// your code here
 
 // append to tableobj a 3-column table row 
 function appendTableRow3 (tableobj, col1, col2, col3) {
