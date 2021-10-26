@@ -58,6 +58,13 @@ appendTableRow5(table2b,"21","22","23","24","25");
 // in table3B, add a column, "Price * Qty", and use JS to compute the correct values to put in the column
 // add to table03B a "totals" row which gives the "grand total" of all numbers in the "Price * Qty" column
 
+let div3b = document.getElementById("3B");
+let table3b = createTable("table3b");
+div3b.appendChild(table3b);
+table3b.setAttribute("style", "border:1px solid black;")
+table3b.setAttribute("width", "100%")
+console.log(document.getElementById["table2b"])
+appendTableRow4(table3b,
 
 // 9. Revise a non-object-oriented HTML form. Make it so the field in focus displays *only* its own error (not the errors of all the other fields), however, if the user clicks the "validate" button, then display all errors.
 // code below is from: https://www.guru99.com/practical-code-examples-using-javascript.html 
