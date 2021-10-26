@@ -11,6 +11,7 @@ let person = {
   fullAddress: function() {return this.streetAddress + " " + this.city + ", " + this.state + " " + this.zipCode}
 }
 document.getElementById("1A").innerHTML = person.fullName();
+document.getElementById("1B").innerHTML = person.fullAddress();
 
 // Instructions
 // modify person object, above, as follows
