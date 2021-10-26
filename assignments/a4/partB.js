@@ -6,7 +6,6 @@ let person = {
   fullName: function() {return this.firstName  + " " + person.lastName}
 }
 document.getElementById("1A").innerHTML = person.fullName();
-document.getElementById("1B").innerHTML = person.fullAddress();
 
 // Instructions
 // modify person object, above, as follows
@@ -18,6 +17,8 @@ person.city = "Midland";
 person.state = "Michigan";
 person.zipCode = 23453;
 person.fullAddress = function() {return this.streetAddress + " " + this.city + ", " + this.state + " " + this.zipCode};
+
+document.getElementById("1B").innerHTML = person.fullAddress();
 // ==================
 
 // 7. create basic DOM object
