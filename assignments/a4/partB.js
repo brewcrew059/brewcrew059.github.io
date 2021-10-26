@@ -16,7 +16,7 @@ person.streetAddress = "123 Main Street";
 person.city = "Midland";
 person.state = "Michigan";
 person.zipCode = 23453;
-person.fullAddress = function() {return this.streetAddress + " " + this.city + ", " + this.state + " " + this.zipCode};
+person.fullAddress = function() {return person.streetAddress + " " + person.city + ", " + person.state + " " + person.zipCode};
 
 document.getElementById("1B").innerHTML = person.fullAddress();
 // ==================
