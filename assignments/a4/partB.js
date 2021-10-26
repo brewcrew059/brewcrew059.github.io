@@ -302,7 +302,6 @@ function createTable(id) {
 }
 
 // possible object oriented form append code
-/*
 let fieldLabel, fieldEntry, fieldError;
 for(let i=0; i<formArray.length; i++) {
   fieldLabel = formArray[i].label;
@@ -315,4 +314,4 @@ for(let i=0; i<formArray.length; i++) {
 console.log(fieldLabel);
 console.log(fieldEntry);
 console.log(fieldError);
-*/
+
