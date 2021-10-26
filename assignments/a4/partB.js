@@ -301,17 +301,3 @@ function createTable(id) {
   return table;
 }
 
-// possible object oriented form append code
-let fieldLabel, fieldEntry, fieldError;
-for(let i=0; i<formArray.length; i++) {
-  fieldLabel = formArray[i].label;
-  fieldEntry =  `<input type='${formArray[i].inputType}' `
-    + `id='${formArray[i].id}' name='${formArray[i].id}' `  
-    + `onkeyup='${formArray[i].onkeyup}' \/>`;
-  fieldError = `<span id='' + formArray[i].errorId + ''></span>`;
-  appendTableRow3(table00,fieldLabel,fieldEntry,fieldError);
-}
-console.log(fieldLabel);
-console.log(fieldEntry);
-console.log(fieldError);
-
