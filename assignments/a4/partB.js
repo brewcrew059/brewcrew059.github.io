@@ -3,12 +3,7 @@ let person = {
   firstName: "Jane",
   lastName: "Doe",
   age: 45,
-  streetAddress: "2323 Wall St",
-  city: "Midland",
-  state: "Michigan",
-  zipCode: 23453,
-  fullName: function() {return this.firstName  + " " + person.lastName},
-  fullAddress: function() {return this.streetAddress + " " + this.city + ", " + this.state + " " + this.zipCode}
+  fullName: function() {return this.firstName  + " " + person.lastName}
 }
 document.getElementById("1A").innerHTML = person.fullName();
 document.getElementById("1B").innerHTML = person.fullAddress();
@@ -19,7 +14,10 @@ document.getElementById("1B").innerHTML = person.fullAddress();
 // add method, fullAddress(), which prints full address on a single line.
 // Display output of fullAddress() in <div id="1B">
 person.streetAddress = "123 Main Street";
-
+person.city = "Midland";
+person.state = "Michigan";
+person.zipCode = 23453;
+person.fullAddress = function() {return this.streetAddress + " " + this.city + ", " + this.state + " " + this.zipCode};
 // ==================
 
 // 7. create basic DOM object
