@@ -64,7 +64,7 @@ div3b.appendChild(table3b);
 table3b.setAttribute("style", "border:1px solid black;")
 table3b.setAttribute("width", "100%")
 console.log(document.getElementById["table2b"])
-appendTableRow4(table3b,
+appendTableRow4(table3b);
 
 // 9. Revise a non-object-oriented HTML form. Make it so the field in focus displays *only* its own error (not the errors of all the other fields), however, if the user clicks the "validate" button, then display all errors.
 // code below is from: https://www.guru99.com/practical-code-examples-using-javascript.html 
