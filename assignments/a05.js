@@ -224,7 +224,7 @@ var populations = {
 'switzerland' : 8632703,
 }
 
-// step2 
+  // step2 
 // new array 
 // loop through all covidJsObj.Countries[i] 
 // push all info i need
@@ -232,8 +232,13 @@ var newArray = []
 for (let i=0; i<covidJsObj.Countries.length; i++) {
   newArray.push({
     "Slug": "\"" + covidJsObj.Countries[i].Slug + "\"",
-    "TotalConfirmed": covidJsObj.Countries[i].TotalConfirmed
-    // continue here...
+    "TotalConfirmed": covidJsObj.Countries[i].TotalConfirmed,
+    "TotalDeaths": covidJsObj.Countries[i].TotalDeaths,
+    "Population": populations[i],
+    "TotalConfirmedPer100000": (covidJsObj.Countries[i].TotalConfirmed / populations[i]) * 100000
   })
+}
   
+  for (let j=0; j<newArray.length; j++){
+  document.write(newArray[j]);
 }
