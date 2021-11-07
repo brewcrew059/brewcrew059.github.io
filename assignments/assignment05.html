@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<h2>Example Chart using Chart.js</h2>
-<canvas id="myChart"></canvas>
-
-<h2>Example AJAX call to Covid19api</h2>
-<button type="button" onclick="loadContent()">Load Covid-19 Content</button>
-
-
-<!-- ChartJS: https://www.chartjs.org/ -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
-
-<!-- Lodash: https://lodash.com/ -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
-
-<!-- Day.js: https://day.js.org/docs/en/installation/browser -->
-<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
-<script>
-  dayjs().format();
-  console.log(dayjs().format("YYYY-MM-DD"));
-
-</script>
-
-<script src="a05.js"></script> 
-
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Example Chart using Chart.js</h2>
+      <canvas id="myChart"></canvas>
+      <h2>Example AJAX call to Covid19api</h2>
+      <button type="button" onclick="loadContent()">Load Covid-19 Content</button>
+    </div>
+    <div class="col-md-6">
+      <h2>Covid-19</h2>
+      <p>"The COVID-19 pandemic also known as the coronavirus pandemic, is an ongoing pandemic of coronavirus disease 2019 (COVID-19) caused by severe acute respiratory syndrome coronavirus 2 (SARS-COV-2) first identified in December 2019 in Wuhan, China."</p>
+    </div>
+  </div>
+  <!-- ChartJS: https://www.chartjs.org/ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+  <!-- Lodash: https://lodash.com/ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+  <!-- Day.js: https://day.js.org/docs/en/installation/browser -->
+  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+  <script>
+    dayjs().format();
+    console.log(dayjs().format("YYYY-MM-DD"));
+  </script>
 </html>
