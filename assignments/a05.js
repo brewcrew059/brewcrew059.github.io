@@ -73,6 +73,7 @@ var chartData = {
 function loadContent() {
   xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
+    
     if (this.readyState == 4 
         && this.status == 200) {
       
@@ -111,7 +112,34 @@ function loadContent() {
         = "Covid 19 Hotspots (" + dayjs().format("YYYY-MM-DD") + ")";
       myChart = new Chart(ctx, chartData); 
 
+     
+      
     } // end if
+    
+       // step2 
+      // new array 
+      // loop through all covidJsObj.Countries[i] 
+      // push all info i need
+
+      var newArr = [];
+    
+      for (let i=0; i<covidJsObj.Countries.length; i++){
+        newArr.push({
+          "Slug": "\"" + covidJsObj.Countries[i].Slug + "\"",
+          "TotalConfirmed": covidJsObj.Countries[i].TotalConfirmed,
+          "TotalDeaths": covidJsObj.Countries[i].TotalDeaths,
+          "Populations": populations[covidJsObj.Countries[i].Slug],
+          "TotalConfirmedPer100000": (covidJsObj.Countries[i].TotalConfirmed / populations[covidJsObj.Countries[i].Slug]) * 100000
+        })
+   
+        }
+    
+      
+        
+    for (let i=0; i<covidJsObj.Countries.length; i++){
+      console.log(newArr[i]);
+    }
+      
     
   }; // end xhttp.onreadystatechange = function()
   
@@ -119,6 +147,7 @@ function loadContent() {
   xhttp.send();
   
 } // end function loadContent() 
+
 
 // data from: https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population
 var populations = {
@@ -222,23 +251,4 @@ var populations = {
 'papua-new-guinea' : 8935000,
 'austria' : 8915382,
 'switzerland' : 8632703,
-}
-
-  // step2 
-// new array 
-// loop through all covidJsObj.Countries[i] 
-// push all info i need
-var newArray = [] 
-for (let i=0; i<covidJsObj.Countries.length; i++) {
-  newArray.push({
-    "Slug": "\"" + covidJsObj.Countries[i].Slug + "\"",
-    "TotalConfirmed": covidJsObj.Countries[i].TotalConfirmed,
-    "TotalDeaths": covidJsObj.Countries[i].TotalDeaths,
-    "Population": populations[i],
-    "TotalConfirmedPer100000": (covidJsObj.Countries[i].TotalConfirmed / populations[i]) * 100000
-  })
-}
-  
-  for (let j=0; j<newArray.length; j++){
-  document.write(newArray[j]);
 }
